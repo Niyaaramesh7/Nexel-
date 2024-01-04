@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <style type="text/css">
+            .center{
+                justify-content:center;
+                margin-left:400px;
+                width:450px;
+                font-size:16px;
+                background-color: rgba(14, 12, 13, 0.212);
+                padding:95px 10px 95px 10px;
+                border:5px solid rgb(47, 53, 53);
+            }
+        </style>
+        
+    </head>
+    <body>
+        <h1 style="text-align:center;color:rgb(25, 27, 21);"><u>VALIDATION FORM</u></h1>
+        <div class="center" style="display:flex;">
+        <form id="myForm">
+            
+            <label for="firstname">PASSWORD:</label><BR>
+            <input type="text" id="fname" placeholder="xx" required><br><br><br>
+            
+            <label for="email">EMAIL:</label><BR>
+            <input type="text" id="email" placeholder="xxx@gmail.com"><br><br><br>
+            <label for="mobile no">MOBILE NO:</label><BR>  
+             <input type="text" id="mobno" placeholder="mobile no" required><br><br><br>
+            <label>GENDER:</label>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">female</label><br><br>
+            <input type="button"  value="submit" onclick="myFunction()"><br><br>
+        </form>
+        </div>
+        <script type="text/javascript">
+            function myFunction(){
+                var x=document.getElementById("myForm");
+                var text="";
+                var i;
+                for(i=0;i<4;i++){
+                    text=text+x.elements[i].value+" ";
+                }
+                if(document.getElementById("male").checked){
+                    text=text+document.getElementById("male").value;
+                }
+                else{
+                    text=text+document.getElementById("female").value;
+                }
+                document.getElementById("area").value=text;
+            }
+        </script>
+    </body>
+</html>
